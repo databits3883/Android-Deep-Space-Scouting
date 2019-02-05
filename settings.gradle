@@ -1,0 +1,2 @@
+include ':app', ':quantitypicker'
+project(':quantitypicker').projectDir = new File('libs/quantitypicker')
