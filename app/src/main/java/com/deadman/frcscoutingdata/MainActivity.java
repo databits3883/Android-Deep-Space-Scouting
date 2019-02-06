@@ -8,7 +8,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Globals.header = namelist();
 
         String permissions[] = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -64,6 +70,33 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+    }
+
+    public String namelist() {
+        List<String> list2 = new ArrayList<>();
+        list2.add("Team");
+        list2.add("Match");
+        list2.add("Top Hatch Success");
+        list2.add("Top Hatch Fail");
+        list2.add("Top Cargo Success");
+        list2.add("Top Cargo Fail");
+        list2.add("Middle Hatch Success");
+        list2.add("Middle Hatch Fail");
+        list2.add("Middle Cargo Success");
+        list2.add("Middle Cargo Fail");
+        list2.add("Bottom Hatch Success");
+        list2.add("Bottom Hatch Fail");
+        list2.add("Bottom Cargo Success");
+        list2.add("Bottom Cargo Fail");
+        list2.add("Ship Hatch Success");
+        list2.add("Ship Hatch Fail");
+        list2.add("Ship Cargo Success");
+        list2.add("Ship Cargo Fail");
+        list2.add("Landing Zone");
+        list2.add("Moving in Sandstorm");
+        list2.add("Data Entered by");
+        list2.add("Match Comments");
+        return TextUtils.join(", ", list2);
     }
 
     // Disable the back button as to not force the memory to be cleared for the activity

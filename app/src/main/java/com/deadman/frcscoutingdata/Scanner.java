@@ -59,7 +59,7 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
                     "\r\n");
             List<String[]> data = new ArrayList<>();
             if (file.length() == 0) {
-                data.add(new String[] {"Team," + "Match," + "Launch Position" + "Rocket Top Hatch," + "Rocket Top Cargo," + "Rocket Middle Hatch," + "Rocket Middle Cargo," + "Rocket Bottom Hatch," + "Rocket Bottom Cargo," + "Cargo Ship Hatch," + "Cargo Ship Cargo," + "Landing Zone," + "Moving in Sandstorm," + "Data Entered by," + "Match Comments"});
+                data.add(new String[] {Globals.header});
             }
             data.add(new String[] {results});
             writer.writeAll(data);

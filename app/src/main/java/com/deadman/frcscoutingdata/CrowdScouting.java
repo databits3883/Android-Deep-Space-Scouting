@@ -176,7 +176,7 @@ public class CrowdScouting extends AppCompatActivity {
 
     public void write_data(){
         String results = Team() + "," + Match() + "," + getallquestions() + "," + Name() + "," + Comments();
-        String header = namelist();
+        String header = Globals.header;
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "FRC" + File.separator + "crowd_data.csv");
         try {
             FileWriter outputfile = new FileWriter(file, true);
@@ -417,33 +417,6 @@ public class CrowdScouting extends AppCompatActivity {
     public String picker(int id){
         QuantityPicker picker = findViewById(id);
         return String.valueOf(picker.getQuantity());
-    }
-
-    public String namelist() {
-        List<String> list2 = new ArrayList<>();
-        list2.add("Team");
-        list2.add("Match");
-        list2.add("Top Hatch Success");
-        list2.add("Top Hatch Fail");
-        list2.add("Top Cargo Success");
-        list2.add("Top Cargo Fail");
-        list2.add("Middle Hatch Success");
-        list2.add("Middle Hatch Fail");
-        list2.add("Middle Cargo Success");
-        list2.add("Middle Cargo Fail");
-        list2.add("Bottom Hatch Success");
-        list2.add("Bottom Hatch Fail");
-        list2.add("Bottom Cargo Success");
-        list2.add("Bottom Cargo Fail");
-        list2.add("Ship Hatch Success");
-        list2.add("Ship Hatch Fail");
-        list2.add("Ship Cargo Success");
-        list2.add("Ship Cargo Fail");
-        list2.add("Landing Zone");
-        list2.add("Moving in Sandstorm");
-        list2.add("Data Entered by");
-        list2.add("Match Comments");
-        return TextUtils.join(", ", list2);
     }
 
     public String getallquestions (){
