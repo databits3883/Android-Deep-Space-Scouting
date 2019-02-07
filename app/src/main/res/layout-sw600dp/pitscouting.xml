@@ -23,6 +23,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/collected_data"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +43,7 @@
             android:background="@android:color/darker_gray"
             android:onClick="savebuttonClick"
             android:text="@string/save"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +81,7 @@
             app:isb_thumb_size="20dp"
             app:isb_tick_marks_drawable="@drawable/dot"
             app:isb_tick_marks_size="13dp"
-            app:isb_tick_texts_color="@android:color/darker_gray"
+            app:isb_tick_texts_color="@color/black"
             app:isb_tick_texts_size="15sp"
             app:isb_ticks_count="2"
             app:isb_track_background_color="@android:color/darker_gray"
@@ -120,7 +122,7 @@
             app:isb_thumb_size="20dp"
             app:isb_tick_marks_drawable="@drawable/dot"
             app:isb_tick_marks_size="13dp"
-            app:isb_tick_texts_color="@android:color/darker_gray"
+            app:isb_tick_texts_color="@color/black"
             app:isb_tick_texts_size="15sp"
             app:isb_ticks_count="2"
             app:isb_track_background_color="@android:color/darker_gray"
@@ -130,99 +132,106 @@
             tools:layout_editor_absoluteY="432dp" />
     </com.warkiz.widget.IndicatorStayLayout>
 
-    <TextView
-        android:id="@+id/info_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/general_info"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+        <TextView
+            android:id="@+id/info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/general_info"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
-    <TextView
-        android:id="@+id/Team_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/team_number"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/team_text"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/Team_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/team_number"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/team_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/Person_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/person_entering_data"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Team_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        <TextView
+            android:id="@+id/Person_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="44dp"
+            android:text="@string/person_entering_data"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Team_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
 
-    <TextView
-        android:id="@+id/Drive_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/drive_chain_style"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Drive_text"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/Drive_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/drive_chain_style"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/Drive_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/Wheel_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/wheel_style"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Drive_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toEndOf="@+id/view7" />
+        <TextView
+            android:id="@+id/Wheel_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wheel_style"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Drive_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toEndOf="@+id/view7" />
 
-    <TextView
-        android:id="@+id/Hatch_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hatches"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
-        app:layout_constraintEnd_toStartOf="@+id/Station_hatch"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Ground_hatch"
-        app:layout_constraintTop_toBottomOf="@+id/guideline9" />
+        <TextView
+            android:id="@+id/Hatch_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hatches"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
+            app:layout_constraintEnd_toStartOf="@+id/Station_hatch"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Ground_hatch"
+            app:layout_constraintTop_toBottomOf="@+id/guideline9" />
 
-    <TextView
-        android:id="@+id/Cargo_title"
-        android:layout_width="89dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/cargo"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Slider_cargo"
-        app:layout_constraintEnd_toStartOf="@+id/Station_cargo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Ground_cargo" />
+        <TextView
+            android:id="@+id/Cargo_title"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/cargo"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/Slider_cargo"
+            app:layout_constraintEnd_toStartOf="@+id/Station_cargo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Ground_cargo" />
 
         <TextView
             android:id="@+id/Launch_title"
@@ -232,6 +241,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
             android:text="@string/launch_position"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.15"
@@ -245,27 +255,29 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/type_of_vision"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/Launch_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/Sandstorm_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/sandstorm_mode"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Sandstorm_text"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        <TextView
+            android:id="@+id/Sandstorm_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/sandstorm_mode"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/Sandstorm_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline11"
+            app:layout_constraintHorizontal_bias="0.133"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
         <TextView
             android:id="@+id/Rocket_title"
@@ -274,38 +286,41 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/max_rocket"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/Sandstorm_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.92"
             app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/Comments_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/comments"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        <TextView
+            android:id="@+id/Comments_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/comments"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
-    <TextView
-        android:id="@+id/Camera_title"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/picture_of_the_robot"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Comments_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/Camera_title"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/picture_of_the_robot"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Comments_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.877"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/team_text"
@@ -317,6 +332,7 @@
             android:hint="@string/hint_team"
             android:importantForAutofill="no"
             android:inputType="number"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.75"
@@ -324,21 +340,22 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:targetApi="o" />
 
-    <EditText
-        android:id="@+id/Person_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:hint="@string/name_hint"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/team_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        tools:targetApi="o" />
+        <EditText
+            android:id="@+id/Person_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:ems="10"
+            android:hint="@string/name_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@+id/team_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            tools:targetApi="o" />
 
     <EditText
         android:id="@+id/Drive_text"
@@ -373,61 +390,64 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         tools:targetApi="o" />
 
-    <EditText
-        android:id="@+id/Vision_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="@string/vision_hint"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Vision_title"
-        tools:targetApi="o" />
+        <EditText
+            android:id="@+id/Vision_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="@string/vision_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Vision_title"
+            tools:targetApi="o" />
 
-    <EditText
-        android:id="@+id/Sandstorm_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="@string/sandstorm_hint"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:targetApi="o" />
+        <EditText
+            android:id="@+id/Sandstorm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="@string/sandstorm_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="o" />
 
-    <EditText
-        android:id="@+id/Comments_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="@string/comment_hint"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Comments_title"
-        app:layout_constraintVertical_bias="0.17000002"
-        tools:targetApi="o" />
+        <EditText
+            android:id="@+id/Comments_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="@string/comment_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Comments_title"
+            app:layout_constraintVertical_bias="0.17000002"
+            tools:targetApi="o" />
 
 
         <Button
@@ -439,37 +459,40 @@
             android:background="@android:color/darker_gray"
             android:onClick="take_picture"
             android:text="@string/launch_camera"
+            android:textColor="@color/black"
             app:layout_constraintBaseline_toBaselineOf="@+id/Comments_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.82"
             app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/perfomance_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/performance_title"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        <TextView
+            android:id="@+id/perfomance_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/performance_title"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
         <CheckBox
-        android:id="@+id/Ground_hatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@android:color/holo_blue_dark"
-        android:text="@string/ground"
-        app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
-        app:layout_constraintEnd_toStartOf="@+id/Hatch_title"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline9" />
+            android:id="@+id/Ground_hatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/holo_blue_dark"
+            android:text="@string/ground"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
+            app:layout_constraintEnd_toStartOf="@+id/Hatch_title"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline9" />
 
         <com.andanhm.quantitypicker.QuantityPicker
             android:id="@+id/Launch_Counter_pit"
@@ -496,17 +519,18 @@
             app:layout_constraintTop_toTopOf="@+id/guideline5"
             app:layout_constraintVertical_bias="1.0" />
 
-    <CheckBox
-        android:id="@+id/Station_hatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@android:color/holo_blue_dark"
-        android:text="@string/station"
-        app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
-        app:layout_constraintEnd_toStartOf="@+id/Ground_cargo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Hatch_title"
-        app:layout_constraintTop_toBottomOf="@+id/guideline9" />
+        <CheckBox
+            android:id="@+id/Station_hatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/holo_blue_dark"
+            android:text="@string/station"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
+            app:layout_constraintEnd_toStartOf="@+id/Ground_cargo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Hatch_title"
+            app:layout_constraintTop_toBottomOf="@+id/guideline9" />
 
         <CheckBox
             android:id="@+id/Ground_cargo"
@@ -515,25 +539,28 @@
             android:layout_marginStart="8dp"
             android:buttonTint="@android:color/holo_blue_dark"
             android:text="@string/ground"
+            android:textColor="@color/black"
             app:layout_constraintBaseline_toBaselineOf="@+id/Cargo_title"
             app:layout_constraintEnd_toStartOf="@+id/Cargo_title"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="@+id/guideline" />
 
-    <CheckBox
-        android:id="@+id/Station_cargo"
-        android:layout_width="89dp"
-        android:layout_height="wrap_content"
-        android:buttonTint="@android:color/holo_blue_dark"
-        android:text="@string/station"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Cargo_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Cargo_title" />
+        <CheckBox
+            android:id="@+id/Station_cargo"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/holo_blue_dark"
+            android:text="@string/station"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Cargo_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Cargo_title" />
 
     <View
         android:id="@+id/view7"
         style="@style/dividerVertical"
+        android:background="@color/black"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -547,6 +574,7 @@
         <View
             android:id="@+id/view10"
             style="@style/dividerVertical"
+            android:background="@color/black"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
@@ -559,6 +587,7 @@
     <View
         android:id="@+id/view9"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginTop="7dp"
         app:layout_constraintBottom_toTopOf="@+id/info_title"
         app:layout_constraintEnd_toEndOf="parent"
@@ -578,6 +607,7 @@
     <View
         android:id="@+id/view"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -586,6 +616,7 @@
     <View
         android:id="@+id/view2"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -598,6 +629,7 @@
     <View
         android:id="@+id/view8"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginBottom="6dp"
         app:layout_constraintBottom_toTopOf="@+id/perfomance_title"
         app:layout_constraintEnd_toEndOf="parent"
@@ -606,6 +638,7 @@
     <View
         android:id="@+id/view3"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -614,6 +647,7 @@
     <View
         android:id="@+id/view4"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -622,6 +656,7 @@
     <View
         android:id="@+id/view5"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -630,6 +665,7 @@
     <View
         android:id="@+id/view6"
         style="@style/dividerHorizontal"
+        android:background="@color/black"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
