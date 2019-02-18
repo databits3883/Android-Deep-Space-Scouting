@@ -71,7 +71,7 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
             e.printStackTrace();
         }
 
-        Intent intent = new Intent(Scanner.this, MainActivity.class);
+        Intent intent = new Intent(Scanner.this, MasterDevice.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
