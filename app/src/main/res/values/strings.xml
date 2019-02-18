@@ -20,7 +20,7 @@
     <string name="cargo">Cargo</string>
     <string name="hatches">Hatches</string>
     <string name="wheel_style">Wheel Style</string>
-    <string name="drive_chain_style">Drive Chain Style</string>
+    <string name="drive_chain_style">Drive Train Style</string>
     <string name="person_entering_data">Person entering data</string>
     <string name="picture_of_the_robot">Picture of the Robot</string>
     <string name="general_info">General Info</string>
