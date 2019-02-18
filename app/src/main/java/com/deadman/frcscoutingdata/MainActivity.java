@@ -1,16 +1,20 @@
 package com.deadman.frcscoutingdata;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Environment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +74,24 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+
+        File frc = new File(Environment.getExternalStorageDirectory() + File.separator + "FRC");
+        File robots = new File(Environment.getExternalStorageDirectory() + File.separator + "FRC" + File.separator + "Robots");
+        File teams = new File(Environment.getExternalStorageDirectory() + File.separator + "FRC" + File.separator + "teams.csv");
+        if (!frc.exists()) {
+            frc.mkdirs();
+        }
+        if (!robots.exists()) {
+            robots.mkdirs();
+        }
+        if(!teams.exists()){
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.confirm_missing_team_dialog_message)
+                    .setTitle(R.string.confirm_missing_team_dialog_title)
+                    .setPositiveButton(R.string.missing_team_export, (dialog, id) -> {
+                    })
+                    .show();
+        }
     }
 
     public String namelist() {
