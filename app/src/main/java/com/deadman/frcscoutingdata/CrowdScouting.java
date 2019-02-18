@@ -40,6 +40,8 @@ public class CrowdScouting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crowdscouting);
 
+        Globals.pos = getIntent().getIntExtra("posid", 0);
+
         // Set the team number based on the match number
         teams();
 
@@ -109,12 +111,17 @@ public class CrowdScouting extends AppCompatActivity {
 
     public void onPause(){
         super.onPause();
+        int pos = Globals.pos;
+        TextView team_num = findViewById(R.id.team_num);
 
         // Insert current values into Shared Preferences so they can be saved if app is closed
         SharedPreferences.Editor editor = getSharedPreferences("CurrentUser", MODE_PRIVATE).edit();
         editor.putString("name", Name());
         editor.putString("match", Match());
         editor.putString("comments", Comments());
+        if (pos == 0){
+            editor.putString("team", team_num.getText().toString());
+        }
         editor.apply();
     }
 
@@ -126,10 +133,19 @@ public class CrowdScouting extends AppCompatActivity {
         String name = prefs.getString("name", null);
         String matchnum = prefs.getString("match", "1");
         String comments = prefs.getString("comments", null);
+        String teams = prefs.getString("team", null);
 
         TextView name_field = findViewById(R.id.name_field);
         QuantityPicker picker = findViewById(R.id.match_counter);
         TextView comments_field = findViewById(R.id.comment_field);
+        int pos = getIntent().getIntExtra("posid", 0);
+        TextView team_num = findViewById(R.id.team_num);
+
+//        Toast.makeText(getApplicationContext(), pos, Toast.LENGTH_SHORT).show();
+
+        if (pos == 0){
+            team_num.setText(teams);
+        }
 
         name_field.setText(name);
         if (matchnum != null) {

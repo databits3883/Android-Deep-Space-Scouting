@@ -3,7 +3,9 @@ package com.deadman.frcscoutingdata;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -13,6 +15,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,12 +24,17 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Spinner spinner1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Globals.header = namelist();
+
+        addItemsOnSpinner1();
+        addListenerOnSpinnerItemSelection();
 
         String permissions[] = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -57,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.nav_crowd:
                                 Intent intent2 = new Intent(MainActivity.this, CrowdScouting.class);
+                                intent2.putExtra("posid", spinner1.getSelectedItemPosition());
                                 startActivity(intent2);
                                 break;
                             case R.id.nav_master:
@@ -93,6 +103,47 @@ public class MainActivity extends AppCompatActivity {
                     .show();
         }
     }
+
+    public void onPause(){
+        super.onPause();
+
+        // Insert current values into Shared Preferences so they can be saved if app is closed
+        SharedPreferences.Editor editor = getSharedPreferences("CurrentUser", MODE_PRIVATE).edit();
+        editor.putInt("Selection", spinner1.getSelectedItemPosition());
+        editor.apply();
+    }
+
+    public void onResume(){
+        super.onResume();
+
+        // Restore values that were saved when the app is opened again
+        SharedPreferences prefs = getSharedPreferences("CurrentUser", MODE_PRIVATE);
+        int selection = prefs.getInt("Selection", 0);
+        spinner1.setSelection(selection);
+    }
+
+    public void addItemsOnSpinner1() {
+
+        spinner1 = findViewById(R.id.spinner1);
+        List<String> list = new ArrayList<>();
+        list.add("Practice Mode");
+        list.add("Red 1");
+        list.add("Red 2");
+        list.add("Red 3");
+        list.add("Blue 1");
+        list.add("Blue 2");
+        list.add("Blue 3");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(dataAdapter);
+    }
+
+    public void addListenerOnSpinnerItemSelection() {
+        spinner1 = findViewById(R.id.spinner1);
+        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+    }
+
 
     public String namelist() {
         List<String> list2 = new ArrayList<>();
