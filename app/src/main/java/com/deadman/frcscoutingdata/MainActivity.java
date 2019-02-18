@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
                         switch(menuItem.getItemId()) {
+                            case R.id.welcome:
+                                //Intent intent5 = new Intent(MainActivity.this, MainActivity.class);
+                                //startActivity(intent5);
+                                //break;
                             case R.id.nav_pit:
                                 Intent intent = new Intent(MainActivity.this, PitScouting.class);
                                 startActivity(intent);

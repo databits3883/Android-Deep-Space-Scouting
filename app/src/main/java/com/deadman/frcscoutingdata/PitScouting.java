@@ -47,10 +47,14 @@ public class PitScouting extends AppCompatActivity {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
                         switch(menuItem.getItemId()) {
+                            case R.id.welcome:
+                                Intent intent5 = new Intent(PitScouting.this, MainActivity.class);
+                                startActivity(intent5);
+                                break;
                             case R.id.nav_pit:
                                 //Intent intent = new Intent(PitScouting.this, PitScouting.class);
                                 //startActivity(intent);
-                                break;
+                                //break;
                             case R.id.nav_crowd:
                                 Intent intent2 = new Intent(PitScouting.this, CrowdScouting.class);
                                 startActivity(intent2);

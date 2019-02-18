@@ -29,6 +29,10 @@ public class Settings extends Activity {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
                         switch(menuItem.getItemId()) {
+                            case R.id.welcome:
+                                Intent intent5 = new Intent(Settings.this, MainActivity.class);
+                                startActivity(intent5);
+                                break;
                             case R.id.nav_pit:
                                 Intent intent = new Intent(Settings.this, PitScouting.class);
                                 startActivity(intent);
@@ -44,8 +48,7 @@ public class Settings extends Activity {
                             case R.id.nav_settings:
                                 //Intent intent4 = new Intent(Settings.this, Settings.class);
                                 //startActivity(intent4);
-                                drawer.closeDrawer(GravityCompat.START);
-                                break;
+                                //break;
                             default:
                                 return onNavigationItemSelected(menuItem);
                         }

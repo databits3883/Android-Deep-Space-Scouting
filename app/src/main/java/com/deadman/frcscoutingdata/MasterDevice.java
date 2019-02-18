@@ -26,6 +26,10 @@ public class MasterDevice extends AppCompatActivity {
                         menuItem.setCheckable(true);
                         menuItem.setChecked(true);
                         switch(menuItem.getItemId()) {
+                            case R.id.welcome:
+                                Intent intent5 = new Intent(MasterDevice.this, MainActivity.class);
+                                startActivity(intent5);
+                                break;
                             case R.id.nav_pit:
                                 Intent intent = new Intent(MasterDevice.this, PitScouting.class);
                                 startActivity(intent);

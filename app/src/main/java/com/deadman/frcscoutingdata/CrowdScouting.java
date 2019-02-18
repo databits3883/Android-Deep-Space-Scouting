@@ -82,16 +82,18 @@ public class CrowdScouting extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
                         switch(menuItem.getItemId()) {
+                            case R.id.welcome:
+                                Intent intent5 = new Intent(CrowdScouting.this, MainActivity.class);
+                                startActivity(intent5);
+                                break;
                             case R.id.nav_pit:
                                 Intent intent = new Intent(CrowdScouting.this, PitScouting.class);
                                 startActivity(intent);
                                 break;
                             case R.id.nav_crowd:
-                                //Disabled for now
                                 //Intent intent2 = new Intent(CrowdScouting.this, CrowdScouting.class);
                                 //startActivity(intent2);
-                                drawer.closeDrawer(GravityCompat.START);
-                                break;
+                                //break;
                             case R.id.nav_master:
                                 Intent intent3 = new Intent(CrowdScouting.this, MasterDevice.class);
                                 startActivity(intent3);
