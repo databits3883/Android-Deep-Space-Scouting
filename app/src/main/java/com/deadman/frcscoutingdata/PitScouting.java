@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
@@ -18,10 +19,9 @@ import android.widget.TextView;
 import com.andanhm.quantitypicker.QuantityPicker;
 import com.opencsv.CSVWriter;
 import com.warkiz.widget.IndicatorSeekBar;
-import com.warkiz.widget.OnSeekChangeListener;
-import com.warkiz.widget.SeekParams;
-
 import java.io.File;
+import android.media.MediaScannerConnection;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +33,7 @@ public class PitScouting extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pitscouting);
+
 
         Launch_Counter_pit();
         Level_rocket();
@@ -145,6 +146,16 @@ public class PitScouting extends AppCompatActivity {
             e.printStackTrace();
         }
         reset_info_pit();
+        rescan(file.getAbsolutePath());
+    }
+
+    public void rescan(String file){
+        MediaScannerConnection.scanFile(this,
+                new String[] {file}, null,
+                (path, uri) -> {
+                    Log.i("ExternalStorage", "Scanned " + path + ":");
+                    Log.i("ExternalStorage", "-> uri=" + uri);
+                });
     }
 
     public void reset_info_pit(){
@@ -251,39 +262,13 @@ public class PitScouting extends AppCompatActivity {
 
     public String Slider_hatch() {
         IndicatorSeekBar seekBar = findViewById(R.id.indicatorSeekBar2);
-        seekBar.setOnSeekChangeListener(new OnSeekChangeListener() {
-            @Override
-            public void onSeeking(SeekParams seekParams) {
-                int raw = seekParams.progress;
-                Globals.hatch = Integer.toString(raw);
-            }
-
-            @Override
-            public void onStartTrackingTouch(IndicatorSeekBar seekBar) {}
-
-            @Override
-            public void onStopTrackingTouch(IndicatorSeekBar seekBar) {}
-        });
-        return Globals.hatch;
+        return Integer.toString(seekBar.getProgress());
     }
 
     public String Slider_cargo() {
         IndicatorSeekBar seekBar = findViewById(R.id.indicatorSeekBar);
-        seekBar.setOnSeekChangeListener(new OnSeekChangeListener() {
-            @Override
-            public void onSeeking(SeekParams seekParams) {
-                int raw = seekParams.progress;
-                Globals.cargo = Integer.toString(raw);
-            }
-
-            @Override
-            public void onStartTrackingTouch(IndicatorSeekBar seekBar) {}
-
-            @Override
-            public void onStopTrackingTouch(IndicatorSeekBar seekBar) {}
-        });
-        return Globals.cargo;
-    }
+        return Integer.toString(seekBar.getProgress());
+}
 
     public String launch_counter() {
         QuantityPicker picker = findViewById(R.id.Launch_Counter_pit);

@@ -1,8 +1,10 @@
 package com.deadman.frcscoutingdata;
 
 import android.app.Activity;
+import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.content.Intent;
 
@@ -49,7 +51,7 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
     public void handleResult(Result rawResult) {
 
         String results = rawResult.getText();
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator +"Download"+File.separator+"stats.csv");
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator +"FRC"+File.separator+"stats.csv");
         try {
             FileWriter outputfile = new FileWriter(file, true);
 
@@ -70,9 +72,19 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
         {
             e.printStackTrace();
         }
+        rescan(file.getAbsolutePath());
 
         Intent intent = new Intent(Scanner.this, MasterDevice.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    public void rescan(String file){
+        MediaScannerConnection.scanFile(this,
+                new String[] {file}, null,
+                (path, uri) -> {
+                    Log.i("ExternalStorage", "Scanned " + path + ":");
+                    Log.i("ExternalStorage", "-> uri=" + uri);
+                });
     }
 }
