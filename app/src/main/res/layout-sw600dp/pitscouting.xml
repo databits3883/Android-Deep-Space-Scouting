@@ -51,86 +51,86 @@
             app:layout_constraintTop_toBottomOf="@+id/save_title" />
 
         <com.warkiz.widget.IndicatorStayLayout
-        android:id="@+id/Slider_cargo"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline9">
+            android:id="@+id/Slider_cargo"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9">
 
-        <com.warkiz.widget.IndicatorSeekBar
-            android:id="@+id/indicatorSeekBar"
-            android:layout_width="290dp"
-            android:layout_height="35dp"
-            app:isb_indicator_color="@android:color/holo_blue_bright"
-            app:isb_indicator_text_color="@color/colorAccent"
-            app:isb_indicator_text_size="12sp"
-            app:isb_max="20"
-            app:isb_min="0"
-            app:isb_only_thumb_draggable="false"
-            app:isb_progress="0"
-            app:isb_seek_smoothly="true"
-            app:isb_show_indicator="rounded_rectangle"
-            app:isb_show_tick_marks_type="oval"
-            app:isb_show_tick_texts="true"
-            app:isb_thumb_color="@android:color/holo_blue_bright"
-            app:isb_thumb_size="20dp"
-            app:isb_tick_marks_drawable="@drawable/dot"
-            app:isb_tick_marks_size="13dp"
-            app:isb_tick_texts_color="@color/black"
-            app:isb_tick_texts_size="15sp"
-            app:isb_ticks_count="2"
-            app:isb_track_background_color="@android:color/darker_gray"
-            app:isb_track_background_size="2dp"
-            app:isb_track_progress_color="@android:color/holo_blue_dark"
-            app:isb_track_progress_size="4dp"
-            tools:layout_editor_absoluteX="295dp"
-            tools:layout_editor_absoluteY="432dp" />
-    </com.warkiz.widget.IndicatorStayLayout>
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/indicatorSeekBar"
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                app:isb_indicator_color="@android:color/holo_blue_bright"
+                app:isb_indicator_text_color="@color/colorAccent"
+                app:isb_indicator_text_size="12sp"
+                app:isb_max="20"
+                app:isb_min="0"
+                app:isb_only_thumb_draggable="false"
+                app:isb_progress="0"
+                app:isb_seek_smoothly="true"
+                app:isb_show_indicator="rounded_rectangle"
+                app:isb_show_tick_marks_type="oval"
+                app:isb_show_tick_texts="true"
+                app:isb_thumb_color="@android:color/holo_blue_bright"
+                app:isb_thumb_size="20dp"
+                app:isb_tick_marks_drawable="@drawable/dot"
+                app:isb_tick_marks_size="13dp"
+                app:isb_tick_texts_color="@color/black"
+                app:isb_tick_texts_size="15sp"
+                app:isb_ticks_count="2"
+                app:isb_track_background_color="@android:color/darker_gray"
+                app:isb_track_background_size="2dp"
+                app:isb_track_progress_color="@android:color/holo_blue_dark"
+                app:isb_track_progress_size="4dp"
+                tools:layout_editor_absoluteX="295dp"
+                tools:layout_editor_absoluteY="432dp" />
+        </com.warkiz.widget.IndicatorStayLayout>
 
-    <com.warkiz.widget.IndicatorStayLayout
-        android:id="@+id/Slider_hatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline9">
+        <com.warkiz.widget.IndicatorStayLayout
+            android:id="@+id/Slider_hatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9">
 
-        <com.warkiz.widget.IndicatorSeekBar
-            android:id="@+id/indicatorSeekBar2"
-            android:layout_width="290dp"
-            android:layout_height="35dp"
-            app:isb_indicator_color="@android:color/holo_blue_bright"
-            app:isb_indicator_text_color="@color/colorAccent"
-            app:isb_indicator_text_size="12sp"
-            app:isb_max="20"
-            app:isb_min="0"
-            app:isb_only_thumb_draggable="false"
-            app:isb_progress="0"
-            app:isb_seek_smoothly="true"
-            app:isb_show_indicator="rounded_rectangle"
-            app:isb_show_tick_marks_type="oval"
-            app:isb_show_tick_texts="true"
-            app:isb_thumb_color="@android:color/holo_blue_bright"
-            app:isb_thumb_size="20dp"
-            app:isb_tick_marks_drawable="@drawable/dot"
-            app:isb_tick_marks_size="13dp"
-            app:isb_tick_texts_color="@color/black"
-            app:isb_tick_texts_size="15sp"
-            app:isb_ticks_count="2"
-            app:isb_track_background_color="@android:color/darker_gray"
-            app:isb_track_background_size="2dp"
-            app:isb_track_progress_color="@android:color/holo_blue_dark"
-            app:isb_track_progress_size="4dp"
-            tools:layout_editor_absoluteY="432dp" />
-    </com.warkiz.widget.IndicatorStayLayout>
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/indicatorSeekBar2"
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                app:isb_indicator_color="@android:color/holo_blue_bright"
+                app:isb_indicator_text_color="@color/colorAccent"
+                app:isb_indicator_text_size="12sp"
+                app:isb_max="20"
+                app:isb_min="0"
+                app:isb_only_thumb_draggable="false"
+                app:isb_progress="0"
+                app:isb_seek_smoothly="true"
+                app:isb_show_indicator="rounded_rectangle"
+                app:isb_show_tick_marks_type="oval"
+                app:isb_show_tick_texts="true"
+                app:isb_thumb_color="@android:color/holo_blue_bright"
+                app:isb_thumb_size="20dp"
+                app:isb_tick_marks_drawable="@drawable/dot"
+                app:isb_tick_marks_size="13dp"
+                app:isb_tick_texts_color="@color/black"
+                app:isb_tick_texts_size="15sp"
+                app:isb_ticks_count="2"
+                app:isb_track_background_color="@android:color/darker_gray"
+                app:isb_track_background_size="2dp"
+                app:isb_track_progress_color="@android:color/holo_blue_dark"
+                app:isb_track_progress_size="4dp"
+                tools:layout_editor_absoluteY="432dp" />
+        </com.warkiz.widget.IndicatorStayLayout>
 
         <TextView
             android:id="@+id/info_title"
@@ -224,11 +224,10 @@
             android:id="@+id/Cargo_title"
             android:layout_width="89dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:text="@string/cargo"
             android:textColor="@color/black"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/Slider_cargo"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Hatch_title"
             app:layout_constraintEnd_toStartOf="@+id/Station_cargo"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Ground_cargo" />
@@ -487,12 +486,11 @@
             android:buttonTint="@android:color/holo_blue_dark"
             android:text="@string/ground"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Hatch_title"
             app:layout_constraintEnd_toStartOf="@+id/Hatch_title"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline9" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.andanhm.quantitypicker.QuantityPicker
             android:id="@+id/Launch_Counter_pit"
@@ -514,7 +512,7 @@
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintHorizontal_bias="0.524"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="@+id/guideline5"
             app:layout_constraintVertical_bias="1.0" />
@@ -526,11 +524,10 @@
             android:buttonTint="@android:color/holo_blue_dark"
             android:text="@string/station"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/Slider_hatch"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Hatch_title"
             app:layout_constraintEnd_toStartOf="@+id/Ground_cargo"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/Hatch_title"
-            app:layout_constraintTop_toBottomOf="@+id/guideline9" />
+            app:layout_constraintStart_toEndOf="@+id/Hatch_title" />
 
         <CheckBox
             android:id="@+id/Ground_cargo"
@@ -678,7 +675,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="300dp"
+            app:layout_constraintGuide_begin="302dp"
             app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.Guideline
@@ -771,13 +768,13 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="771dp" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_end="0dp" />
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="79dp" />
 
     </android.support.constraint.ConstraintLayout>
 

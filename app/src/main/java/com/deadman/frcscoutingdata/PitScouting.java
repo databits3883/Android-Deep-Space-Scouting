@@ -167,7 +167,18 @@ public class PitScouting extends AppCompatActivity {
         TextView Comments_text = findViewById(R.id.Comments_text);
         QuantityPicker Launch_Counter_pit = findViewById(R.id.Launch_Counter_pit);
         QuantityPicker Level_rocket = findViewById(R.id.Level_rocket);
-
+        CheckBox Station_hatch = findViewById(R.id.Station_hatch);
+        CheckBox Station_cargo = findViewById(R.id.Station_cargo);
+        CheckBox Ground_cargo = findViewById(R.id.Ground_cargo);
+        CheckBox Ground_hatch = findViewById(R.id.Ground_hatch);
+        IndicatorSeekBar seek_hatch = findViewById(R.id.Slider_hatch);
+        IndicatorSeekBar seek_cargo = findViewById(R.id.Slider_cargo);
+        seek_hatch.setProgress(0);
+        seek_cargo.setProgress(0);
+        Station_cargo.setChecked(false);
+        Station_hatch.setChecked(false);
+        Ground_cargo.setChecked(false);
+        Ground_hatch.setChecked(false);
         team_text.setText("");
         Drive_text.setText("");
         Wheel_text.setText("");
