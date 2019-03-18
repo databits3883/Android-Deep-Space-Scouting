@@ -9,13 +9,12 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +42,26 @@ public class CrowdScouting extends AppCompatActivity {
         setContentView(R.layout.crowdscouting);
 
         Globals.pos = getIntent().getIntExtra("posid", 0);
+
+        String Position = "";
+        if (Globals.pos == 0) {
+            Position = " Practice Mode";
+        } else if (Globals.pos == 1) {
+            Position = " Red 1";
+        } else if (Globals.pos == 2) {
+            Position = " Red 2";
+        } else if (Globals.pos == 3) {
+            Position = " Red 3";
+        } else if (Globals.pos == 4) {
+            Position = " Blue 1";
+        } else if (Globals.pos == 5) {
+            Position = " Blue 2";
+        } else if (Globals.pos == 6) {
+            Position = " Blue 3";
+        }
+
+        Button export = findViewById(R.id.Export_Button);
+        export.setText("Export to Master Device" + Position);
 
         // Set the team number based on the match number
         teams();
@@ -76,7 +95,6 @@ public class CrowdScouting extends AppCompatActivity {
         reset_info();
 
         // Navbar menu
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
