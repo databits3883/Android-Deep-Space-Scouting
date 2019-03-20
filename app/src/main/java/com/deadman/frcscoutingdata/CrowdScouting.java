@@ -354,7 +354,8 @@ public class CrowdScouting extends AppCompatActivity {
 
     public String Comments() {
         TextView team = findViewById(R.id.comment_field);
-        return team.getText().toString();
+        String comment_string = team.getText().toString();
+        return comment_string.replaceAll(",", " ");
     }
 
     public void roc_top_suc_hatch_counter(){

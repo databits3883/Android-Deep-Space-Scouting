@@ -303,7 +303,8 @@ public class PitScouting extends AppCompatActivity {
 
     public String comments() {
         TextView Comments = findViewById(R.id.Comments_text);
-        return Comments.getText().toString();
+        String comment_string = Comments.getText().toString();
+        return comment_string.replaceAll(",", " ");
     }
 
     // Disable the back button as to not force the memory to be cleared for the activity
