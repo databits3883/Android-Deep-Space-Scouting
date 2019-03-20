@@ -171,8 +171,8 @@ public class PitScouting extends AppCompatActivity {
         CheckBox Station_cargo = findViewById(R.id.Station_cargo);
         CheckBox Ground_cargo = findViewById(R.id.Ground_cargo);
         CheckBox Ground_hatch = findViewById(R.id.Ground_hatch);
-        IndicatorSeekBar seek_hatch = findViewById(R.id.Slider_hatch);
-        IndicatorSeekBar seek_cargo = findViewById(R.id.Slider_cargo);
+        IndicatorSeekBar seek_hatch = findViewById(R.id.indicatorSeekBar2);
+        IndicatorSeekBar seek_cargo = findViewById(R.id.indicatorSeekBar);
         seek_hatch.setProgress(0);
         seek_cargo.setProgress(0);
         Station_cargo.setChecked(false);
