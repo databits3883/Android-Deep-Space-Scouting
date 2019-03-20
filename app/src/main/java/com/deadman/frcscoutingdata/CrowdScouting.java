@@ -223,7 +223,7 @@ public class CrowdScouting extends AppCompatActivity {
     }
 
     public void write_data(){
-        String results = Team() + "," + Match() + "," + getallquestions() + "," + Name() + "," + Comments();
+        String results = Team() + "," + Match() + "," + getallquestions() + "," + total_hatch() + "," + total_cargo() + "," + Name() + "," + Comments();
         String header = Globals.header;
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "FRC" + File.separator + "crowd_data.csv");
         try {
@@ -504,6 +504,24 @@ public class CrowdScouting extends AppCompatActivity {
                 (name) -> result.set(result + picker(name) + ",")
         );
         return result.get();
+    }
+
+    public String total_hatch (){
+        QuantityPicker top = findViewById(R.id.roc_top_suc_hatch_counter);
+        QuantityPicker mid = findViewById(R.id.roc_mid_suc_hatch_counter);
+        QuantityPicker bot = findViewById(R.id.roc_bot_suc_hatch_counter);
+        QuantityPicker ship = findViewById(R.id.ship_suc_hatch_counter);
+        int total = top.getQuantity() + mid.getQuantity() + bot.getQuantity() + ship.getQuantity();
+        return Integer.toString(total);
+    }
+
+    public String total_cargo (){
+        QuantityPicker top = findViewById(R.id.roc_top_suc_cargo_counter);
+        QuantityPicker mid = findViewById(R.id.roc_mid_suc_cargo_counter);
+        QuantityPicker bot = findViewById(R.id.roc_bot_suc_cargo_counter);
+        QuantityPicker ship = findViewById(R.id.ship_suc_cargo_counter);
+        int total = top.getQuantity() + mid.getQuantity() + bot.getQuantity() + ship.getQuantity();
+        return Integer.toString(total);
     }
 
     // Disable the back button as to not force the memory to be cleared for the activity
