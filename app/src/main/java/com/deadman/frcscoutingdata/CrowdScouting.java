@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
@@ -42,26 +43,36 @@ public class CrowdScouting extends AppCompatActivity {
         setContentView(R.layout.crowdscouting);
 
         Globals.pos = getIntent().getIntExtra("posid", 0);
+        Button export = findViewById(R.id.Export_Button);
 
         String Position = "";
         if (Globals.pos == 0) {
             Position = " Practice Mode";
+            export.setBackgroundColor(Color.GREEN);
         } else if (Globals.pos == 1) {
             Position = " Red 1";
+            export.setBackgroundColor(Color.RED);
         } else if (Globals.pos == 2) {
             Position = " Red 2";
+            export.setBackgroundColor(Color.RED);
         } else if (Globals.pos == 3) {
             Position = " Red 3";
+            export.setBackgroundColor(Color.RED);
         } else if (Globals.pos == 4) {
             Position = " Blue 1";
+            export.setBackgroundColor(Color.BLUE);
+            export.setTextColor(Color.WHITE);
         } else if (Globals.pos == 5) {
             Position = " Blue 2";
+            export.setBackgroundColor(Color.BLUE);
+            export.setTextColor(Color.WHITE);
         } else if (Globals.pos == 6) {
             Position = " Blue 3";
+            export.setBackgroundColor(Color.BLUE);
+            export.setTextColor(Color.WHITE);
         }
 
-        Button export = findViewById(R.id.Export_Button);
-        export.setText("Export to Master Device" + Position);
+        export.setText("Export to Master Device\n" + Position);
 
         // Set the team number based on the match number
         teams();

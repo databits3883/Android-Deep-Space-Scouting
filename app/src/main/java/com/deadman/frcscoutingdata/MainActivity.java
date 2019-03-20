@@ -25,6 +25,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinner1;
+    int selection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         addItemsOnSpinner1();
         addListenerOnSpinnerItemSelection();
+
+        spinner1.setSelection(0);
 
         String permissions[] = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -115,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences("CurrentUser", MODE_PRIVATE).edit();
         editor.putInt("Selection", spinner1.getSelectedItemPosition());
         editor.apply();
+        selection = spinner1.getSelectedItemPosition();
     }
 
     public void onResume(){
@@ -122,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Restore values that were saved when the app is opened again
         SharedPreferences prefs = getSharedPreferences("CurrentUser", MODE_PRIVATE);
-        int selection = prefs.getInt("Selection", 0);
+        selection = prefs.getInt("Selection", 0);
         spinner1.setSelection(selection);
     }
 
