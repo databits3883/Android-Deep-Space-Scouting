@@ -82,6 +82,7 @@ public class CrowdScouting extends AppCompatActivity {
         launch_counter();
         landing_counter();
         sandstorm_counter();
+        defense_counter();
 
         // Hatch Selectors
         roc_top_suc_hatch_counter();
@@ -223,7 +224,7 @@ public class CrowdScouting extends AppCompatActivity {
     }
 
     public void write_data(){
-        String results = Team() + "," + Match() + "," + getallquestions() + "," + total_hatch() + "," + total_cargo() + "," + Name() + "," + Comments();
+        String results = Team() + "," + Match() + "," + getallquestions() + "," + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments();
         String header = Globals.header;
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "FRC" + File.separator + "crowd_data.csv");
         try {
@@ -460,6 +461,12 @@ public class CrowdScouting extends AppCompatActivity {
         counter(id, 0, 3);
     }
 
+    public void defense_counter(){
+        QuantityPicker quantityPicker = findViewById(R.id.defense_counter);
+        int id = quantityPicker.getId();
+        counter(id, 0, 1);
+    }
+
     public void counter(int id, int min, int max){
         QuantityPicker picker = findViewById(id);
         picker.setMinQuantity(min);
@@ -500,6 +507,7 @@ public class CrowdScouting extends AppCompatActivity {
         list.add(R.id.landing_counter);
         list.add(R.id.sandstorm_counter);
         list.add(R.id.launch_counter);
+        list.add(R.id.defense_counter);
         list.forEach(
                 (name) -> result.set(result + picker(name) + ",")
         );
@@ -522,6 +530,10 @@ public class CrowdScouting extends AppCompatActivity {
         QuantityPicker ship = findViewById(R.id.ship_suc_cargo_counter);
         int total = top.getQuantity() + mid.getQuantity() + bot.getQuantity() + ship.getQuantity();
         return Integer.toString(total);
+    }
+
+    public String all_total (){
+        return Integer.toString(Integer.parseInt(total_cargo()) + Integer.parseInt(total_hatch()));
     }
 
     // Disable the back button as to not force the memory to be cleared for the activity

@@ -77,4 +77,5 @@
     <string name="confirm_missing_team_dialog_message">You are missing the teams.csv file in /sdcard/FRC, please fix this</string>
     <string name="missing_team_export">OK Sounds good</string>
     <string name="Welcome_Page">Welcome</string>
+    <string name="defense_Text">Playing Defense</string>
 </resources>

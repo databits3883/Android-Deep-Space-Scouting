@@ -176,8 +176,10 @@ public class MainActivity extends AppCompatActivity {
         list2.add("Landing Zone");
         list2.add("Moving in Sandstorm");
         list2.add("Launch Position");
+        list2.add("Playing Defense");
         list2.add("Total Hatches");
         list2.add("Total Cargo");
+        list2.add("All Cargo/Hatches Scored");
         list2.add("Data Entered by");
         list2.add("Match Comments");
         return TextUtils.join(", ", list2);
