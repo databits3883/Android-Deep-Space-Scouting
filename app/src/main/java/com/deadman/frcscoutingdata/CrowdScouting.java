@@ -197,7 +197,7 @@ public class CrowdScouting extends AppCompatActivity {
                 .setTitle(R.string.confirm_export_dialog_title)
                 .setPositiveButton(R.string.confirm_export, (dialog, id) -> {
                     // Generates the QR Code
-                    Bitmap myBitmap = QRCode.from(Team() + "," + Match() + "," + getallquestions() + "," + Name() + "," + Comments()).withSize(500, 500).bitmap();
+                    Bitmap myBitmap = QRCode.from(Team() + "," + Match() + "," + getallquestions() + "," + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments()).withSize(500, 500).bitmap();
                     Drawable d = new BitmapDrawable(getResources(), myBitmap);
                     ImagePopup imagePopup = new ImagePopup(this);
                     imagePopup.setImageOnClickClose(true);
