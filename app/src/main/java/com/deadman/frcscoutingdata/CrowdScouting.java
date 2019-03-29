@@ -197,7 +197,7 @@ public class CrowdScouting extends AppCompatActivity {
                 .setTitle(R.string.confirm_export_dialog_title)
                 .setPositiveButton(R.string.confirm_export, (dialog, id) -> {
                     // Generates the QR Code
-                    Bitmap myBitmap = QRCode.from(Team() + "," + Match() + "," + getallquestions() + "," + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments()).withSize(500, 500).bitmap();
+                    Bitmap myBitmap = QRCode.from(Team() + "," + Match() + "," + getallquestions() + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments()).withSize(500, 500).bitmap();
                     Drawable d = new BitmapDrawable(getResources(), myBitmap);
                     ImagePopup imagePopup = new ImagePopup(this);
                     imagePopup.setImageOnClickClose(true);
@@ -224,7 +224,7 @@ public class CrowdScouting extends AppCompatActivity {
     }
 
     public void write_data(){
-        String results = Team() + "," + Match() + "," + getallquestions() + "," + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments();
+        String results = Team() + "," + Match() + "," + getallquestions() + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments();
         String header = Globals.header;
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "FRC" + File.separator + "crowd_data.csv");
         try {
@@ -310,6 +310,7 @@ public class CrowdScouting extends AppCompatActivity {
                 "landing_counter",
                 "sandstorm_counter",
                 "launch_counter",
+                "defense_counter",
         };
 
         for (int i = 0; i < 18; i++) {
