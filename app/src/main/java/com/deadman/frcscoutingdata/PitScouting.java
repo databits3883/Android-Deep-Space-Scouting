@@ -40,6 +40,7 @@ public class PitScouting extends AppCompatActivity {
 
         reset_info_pit();
 
+        // Navbar menu
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -97,6 +98,7 @@ public class PitScouting extends AppCompatActivity {
         Person_text.setText(name);
     }
 
+    // Function to take a picture and name it based on the entered team number
     public void take_picture(View view){
         String team_num = team();
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -108,6 +110,7 @@ public class PitScouting extends AppCompatActivity {
         startActivityForResult(i,1);
     }
 
+    // Export entered pit data to a CSV file and reset the fields
     public void savebuttonClick(View view){
         new AlertDialog.Builder(this)
                 .setMessage(R.string.confirm_export_dialog_message)
@@ -122,6 +125,7 @@ public class PitScouting extends AppCompatActivity {
                 .show();
     }
 
+    // Write the pit data to a CSV file
     public void write_data_pit(){
         String results = team() + "," + name() + "," + drive_chain() + "," + wheel_style() + "," + ground_hatch_check() + "," + station_hatch_check() + "," + ground_cargo_check() + "," + station_cargo_check() + "," + Slider_hatch() + "," + Slider_cargo() + "," + launch_counter() + "," + vision() + "," + sandstorm() + "," + rocket_counter()  + "," + comments();
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "FRC"+ File.separator + "pit_data.csv");
@@ -149,6 +153,7 @@ public class PitScouting extends AppCompatActivity {
         rescan(file.getAbsolutePath());
     }
 
+    // Function to scan the edited file so it shows up right away in MTP/OTG
     public void rescan(String file){
         MediaScannerConnection.scanFile(this,
                 new String[] {file}, null,
@@ -158,6 +163,7 @@ public class PitScouting extends AppCompatActivity {
                 });
     }
 
+    // Resets all the fields on the page
     public void reset_info_pit(){
         TextView team_text = findViewById(R.id.team_text);
         TextView Drive_text = findViewById(R.id.Drive_text);
@@ -189,6 +195,7 @@ public class PitScouting extends AppCompatActivity {
         Level_rocket.setQuantitySelected(0);
     }
 
+    // The following functions initialize the counters in the UI
     public void Launch_Counter_pit(){
         QuantityPicker quantityPicker = findViewById(R.id.Launch_Counter_pit);
         quantityPicker.setMinQuantity(1);
@@ -215,6 +222,7 @@ public class PitScouting extends AppCompatActivity {
         quantityPicker.setQuantityButtonColor(R.color.black);
     }
 
+    // The following functions get the current data from the UI and return them as a string
     public String team() {
         TextView team = findViewById(R.id.team_text);
         return team.getText().toString();
@@ -301,6 +309,7 @@ public class PitScouting extends AppCompatActivity {
         return String.valueOf(picker.getQuantity());
     }
 
+    // Take the entered string and remove commas then return it
     public String comments() {
         TextView Comments = findViewById(R.id.Comments_text);
         String comment_string = Comments.getText().toString();

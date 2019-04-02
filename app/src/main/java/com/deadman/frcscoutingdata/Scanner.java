@@ -47,6 +47,7 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
         mScannerView.stopCamera();           // Stop camera on pause
     }
 
+    // Function to create the stats.csv from the data gotten from the QR Code
     @Override
     public void handleResult(Result rawResult) {
 
@@ -79,6 +80,7 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
         startActivity(intent);
     }
 
+    // Function to scan the edited file so it shows up right away in MTP/OTG
     public void rescan(String file){
         MediaScannerConnection.scanFile(this,
                 new String[] {file}, null,

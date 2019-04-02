@@ -20,7 +20,7 @@ public class Settings extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        // Navbar menu
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -58,6 +58,7 @@ public class Settings extends Activity {
                 });
     }
 
+    // Remove the stats.csv file to prepare for the next competition
     public void delete (View view){
         new AlertDialog.Builder(this)
                 .setMessage(R.string.confirm_dialog_message)

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         spinner1.setSelection(0);
 
+        // Runtime permission asking system
         String permissions[] = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
         int PERMISSIONS_ALL = 1;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[] {permissions[2], permissions[3]}, PERMISSIONS_ALL);
         }
 
+        // Navbar menu
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        // Create the FRC folders in case they are missing, complain if teams.csv is missing as well
         File frc = new File(Environment.getExternalStorageDirectory() + File.separator + "FRC");
         File robots = new File(Environment.getExternalStorageDirectory() + File.separator + "FRC" + File.separator + "Robots");
         File teams = new File(Environment.getExternalStorageDirectory() + File.separator + "FRC" + File.separator + "teams.csv");
@@ -130,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         spinner1.setSelection(selection);
     }
 
+    // Add position selector options
     public void addItemsOnSpinner1() {
 
         spinner1 = findViewById(R.id.spinner1);
@@ -152,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
     }
 
-
+    // Function to create the header for the crowd scouting csv
     public String namelist() {
         List<String> list2 = new ArrayList<>();
         list2.add("Team");

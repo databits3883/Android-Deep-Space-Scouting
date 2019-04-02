@@ -192,6 +192,7 @@ public class CrowdScouting extends AppCompatActivity {
     public void buttonClick(View view){
         QuantityPicker picker = findViewById(R.id.match_counter);
 
+        // Generate the confirmation to make the QR Code
         new AlertDialog.Builder(this)
                 .setMessage(R.string.confirm_export_dialog_message)
                 .setTitle(R.string.confirm_export_dialog_title)
@@ -205,7 +206,7 @@ public class CrowdScouting extends AppCompatActivity {
                     imagePopup.initiatePopup(d);
                     imagePopup.viewPopup();
 
-                    // Write to the CSV
+                    // Write to the backup CSV file
                     write_data();
 
                     // Remove the text in the comment field
@@ -223,6 +224,7 @@ public class CrowdScouting extends AppCompatActivity {
                 .show();
     }
 
+    // Function to create the backup csv file
     public void write_data(){
         String results = Team() + "," + Match() + "," + getallquestions() + total_hatch() + "," + total_cargo() + "," + all_total() + "," + Name() + "," + Comments();
         String header = Globals.header;
@@ -250,6 +252,7 @@ public class CrowdScouting extends AppCompatActivity {
         rescan(file.getAbsolutePath());
     }
 
+    // Function to scan the edited file so it shows up right away in MTP/OTG
     public void rescan(String file){
         MediaScannerConnection.scanFile(this,
                 new String[] {file}, null,
@@ -259,6 +262,7 @@ public class CrowdScouting extends AppCompatActivity {
                 });
     }
 
+    // Function read the Teams.csv file to parse the team data
     public String read_data(){
         QuantityPicker picker = findViewById(R.id.match_counter);
         int pos = Globals.pos;
@@ -282,11 +286,13 @@ public class CrowdScouting extends AppCompatActivity {
         return "";
     }
 
+    // Sets the team number based on Teams.csv file
     public void teams(){
         TextView team_num = findViewById(R.id.team_num);
         team_num.setText(read_data());
     }
 
+    // Resets all the fields on the page
     public void reset_info(){
         TextView comment_field = findViewById(R.id.comment_field);
         comment_field.setText("");
@@ -320,6 +326,7 @@ public class CrowdScouting extends AppCompatActivity {
         }
     }
 
+    // The following functions get the current data from the UI and return them as a string
     public String Team() {
         TextView team = findViewById(R.id.team_num);
         return team.getText().toString();
@@ -360,6 +367,7 @@ public class CrowdScouting extends AppCompatActivity {
         return comment_string.replaceAll(",", " ");
     }
 
+    // The following functions initialize the counters in the UI
     public void roc_top_suc_hatch_counter(){
         QuantityPicker quantityPicker = findViewById(R.id.roc_top_suc_hatch_counter);
         int id = quantityPicker.getId();
@@ -486,6 +494,7 @@ public class CrowdScouting extends AppCompatActivity {
         return String.valueOf(picker.getQuantity());
     }
 
+    // Create the string for most of the data
     public String getallquestions (){
         AtomicReference<String> result = new AtomicReference<>("");
         List<Integer> list = new ArrayList<>();
@@ -515,6 +524,7 @@ public class CrowdScouting extends AppCompatActivity {
         return result.get();
     }
 
+    // All hatch data added together for a match
     public String total_hatch (){
         QuantityPicker top = findViewById(R.id.roc_top_suc_hatch_counter);
         QuantityPicker mid = findViewById(R.id.roc_mid_suc_hatch_counter);
@@ -524,6 +534,7 @@ public class CrowdScouting extends AppCompatActivity {
         return Integer.toString(total);
     }
 
+    // All cargo data added together for a match
     public String total_cargo (){
         QuantityPicker top = findViewById(R.id.roc_top_suc_cargo_counter);
         QuantityPicker mid = findViewById(R.id.roc_mid_suc_cargo_counter);
@@ -533,6 +544,7 @@ public class CrowdScouting extends AppCompatActivity {
         return Integer.toString(total);
     }
 
+    // All cargo + hatch added together
     public String all_total (){
         return Integer.toString(Integer.parseInt(total_cargo()) + Integer.parseInt(total_hatch()));
     }

@@ -16,7 +16,7 @@ public class MasterDevice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.masterdevice);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        // Navbar menu
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -41,7 +41,6 @@ public class MasterDevice extends AppCompatActivity {
                             case R.id.nav_master:
                                 //Intent intent3 = new Intent(MasterDevice.this, MasterDevice.class);
                                 //startActivity(intent3);
-                                drawer.closeDrawer(GravityCompat.START);
                                 break;
                             case R.id.nav_settings:
                                 Intent intent4 = new Intent(MasterDevice.this, Settings.class);
@@ -56,6 +55,7 @@ public class MasterDevice extends AppCompatActivity {
                 });
     }
 
+    // Launch the QR Code scanner
     public void qr_code(View view){
         Intent intent = new Intent(MasterDevice.this, Scanner.class);
         startActivity(intent);
