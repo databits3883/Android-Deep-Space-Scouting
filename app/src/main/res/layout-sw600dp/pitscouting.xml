@@ -30,7 +30,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline10"
-            app:layout_constraintVertical_bias="0.041" />
+            app:layout_constraintVertical_bias="0.24000001" />
 
         <Button
             android:id="@+id/save_button"
@@ -55,10 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline9">
 
@@ -99,7 +99,7 @@
             android:layout_marginTop="44dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline9">
 
@@ -243,7 +243,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Slider_hatch" />
 
@@ -258,7 +258,7 @@
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/Launch_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintHorizontal_bias="0.82"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -274,7 +274,7 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/Sandstorm_text"
             app:layout_constraintEnd_toStartOf="@+id/guideline11"
-            app:layout_constraintHorizontal_bias="0.133"
+            app:layout_constraintHorizontal_bias="0.18"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
@@ -289,7 +289,7 @@
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/Sandstorm_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintHorizontal_bias="0.85"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -303,7 +303,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintHorizontal_bias="0.19"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
@@ -313,12 +313,12 @@
             android:layout_height="32dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/picture_of_the_robot"
+            android:text="@string/climb_level"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/Comments_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.877"
+            app:layout_constraintHorizontal_bias="0.85"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
@@ -449,21 +449,6 @@
             tools:targetApi="o" />
 
 
-        <Button
-            android:id="@+id/Launch_camera"
-            android:layout_width="127dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/darker_gray"
-            android:onClick="take_picture"
-            android:text="@string/launch_camera"
-            android:textColor="@color/black"
-            app:layout_constraintBaseline_toBaselineOf="@+id/Comments_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.82"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <TextView
             android:id="@+id/perfomance_title"
             android:layout_width="wrap_content"
@@ -508,14 +493,27 @@
             android:id="@+id/Level_rocket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.524"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintHorizontal_bias="0.81"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline5"
             app:layout_constraintVertical_bias="1.0" />
+
+        <com.andanhm.quantitypicker.QuantityPicker
+            android:id="@+id/Level_climb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.82"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <CheckBox
             android:id="@+id/Station_hatch"

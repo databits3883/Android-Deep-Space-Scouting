@@ -4,7 +4,7 @@
     <string name="station">Station</string>
     <string name="performance_title">Expected Performance</string>
     <string name="launch_camera">Launch Camera</string>
-    <string name="max_rocket">Max level on the rocket</string>
+    <string name="max_rocket">Max rocket level</string>
     <string name="comment_hint">Anything extra of note</string>
     <string name="sandstorm_hint">Auto, Camera, None</string>
     <string name="vision_hint">Put None if no vision</string>
@@ -22,7 +22,7 @@
     <string name="wheel_style">Wheel Style</string>
     <string name="drive_chain_style">Drive Train Style</string>
     <string name="person_entering_data">Person entering data</string>
-    <string name="picture_of_the_robot">Picture of the Robot</string>
+    <string name="climb_level">Max climb level</string>
     <string name="general_info">General Info</string>
     <string name="team_number">Team Number</string>
     <string name="Team">Team</string>

@@ -37,6 +37,7 @@ public class PitScouting extends AppCompatActivity {
 
         Launch_Counter_pit();
         Level_rocket();
+        Level_climb();
 
         reset_info_pit();
 
@@ -127,7 +128,7 @@ public class PitScouting extends AppCompatActivity {
 
     // Write the pit data to a CSV file
     public void write_data_pit(){
-        String results = team() + "," + name() + "," + drive_chain() + "," + wheel_style() + "," + ground_hatch_check() + "," + station_hatch_check() + "," + ground_cargo_check() + "," + station_cargo_check() + "," + Slider_hatch() + "," + Slider_cargo() + "," + launch_counter() + "," + vision() + "," + sandstorm() + "," + rocket_counter()  + "," + comments();
+        String results = team() + "," + name() + "," + drive_chain() + "," + wheel_style() + "," + ground_hatch_check() + "," + station_hatch_check() + "," + ground_cargo_check() + "," + station_cargo_check() + "," + Slider_hatch() + "," + Slider_cargo() + "," + launch_counter() + "," + vision() + "," + sandstorm() + "," + rocket_counter()  + "," + climb_counter()  + "," + comments();
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "FRC"+ File.separator + "pit_data.csv");
         try {
             FileWriter outputfile = new FileWriter(file, true);
@@ -138,7 +139,7 @@ public class PitScouting extends AppCompatActivity {
                     "\r\n");
             List<String[]> data = new ArrayList<>();
             if (file.length() == 0) {
-                data.add(new String[] {"Team," + "Data entered by," + "Drive Chain," + "Wheel Style," + "Hatches from ground," + "Hatches from station," + "Cargo from ground," + "Cargo from station," + "Total number of Hatches," + "Total number of cargo," + "Launch Position," + "Type of Vision," + "What the robot does in sandstorm," + "Max level on the rocket," + "comments," });
+                data.add(new String[] {"Team," + "Data entered by," + "Drive Chain," + "Wheel Style," + "Hatches from ground," + "Hatches from station," + "Cargo from ground," + "Cargo from station," + "Total number of Hatches," + "Total number of cargo," + "Launch Position," + "Type of Vision," + "What the robot does in sandstorm," + "Max level on the rocket," + "Max climb level" + "comments," });
             }
             data.add(new String[] {results});
             writer.writeAll(data);
@@ -211,6 +212,19 @@ public class PitScouting extends AppCompatActivity {
 
     public void Level_rocket(){
         QuantityPicker quantityPicker = findViewById(R.id.Level_rocket);
+        quantityPicker.setMinQuantity(1);
+        quantityPicker.setMaxQuantity(200);
+        quantityPicker.setQuantityPicker(true);
+        quantityPicker.setTextStyle(QuantityPicker.BOLD);
+        quantityPicker.setQuantityTextColor(R.color.colorPrimaryDark);
+        quantityPicker.setTextSize(30);
+        quantityPicker.setQuantityTextColor(R.color.counter_color);
+        quantityPicker.setTextStyle(QuantityPicker.NORMAL);
+        quantityPicker.setQuantityButtonColor(R.color.black);
+    }
+
+    public void Level_climb(){
+        QuantityPicker quantityPicker = findViewById(R.id.Level_climb);
         quantityPicker.setMinQuantity(1);
         quantityPicker.setMaxQuantity(200);
         quantityPicker.setQuantityPicker(true);
@@ -306,6 +320,11 @@ public class PitScouting extends AppCompatActivity {
 
     public String rocket_counter() {
         QuantityPicker picker = findViewById(R.id.Level_rocket);
+        return String.valueOf(picker.getQuantity());
+    }
+
+    public String climb_counter() {
+        QuantityPicker picker = findViewById(R.id.Level_climb);
         return String.valueOf(picker.getQuantity());
     }
 
