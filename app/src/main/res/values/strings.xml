@@ -12,7 +12,6 @@
     <string name="drive_hint">ex: Tank Drive</string>
     <string name="name_hint">Your Name</string>
     <string name="hint_team">3883</string>
-    <string name="picture_title">Picture of the Robot</string>
     <string name="comments">Comments</string>
     <string name="sandstorm_mode">Sandstorm Mode</string>
     <string name="type_of_vision">Type of Vision</string>
@@ -37,12 +36,7 @@
     <string name="Q8_Text">Cargo Ship Hatch</string>
     <string name="Q9_Text">Cargo Ship Cargo</string>
     <string name="Q10_Text">Landing Zone</string>
-    <string name="Q11_Text">Rank Point Rocket</string>
-    <string name="Q12_Text">Rank Point Landing</string>
     <string name="Export_Button">Export to Master Device</string>
-    <string name="qr_code_text">Scan QR with Master Device</string>
-    <string name="qr_img_desc">QR Code</string>
-    <string name="qr_code_back_button_text">Click to go back</string>
     <string name="moving_in">Moving in Sandstorm</string>
     <string name="user_name">Name:</string>
     <string name="comment_text">Comments:</string>
@@ -63,7 +57,6 @@
     <string name="crowd">Crowd Scouting</string>
     <string name="master">Master Device</string>
     <string name="settings">Settings</string>
-    <string name="settings_title">Settings</string>
     <string name="choose_position">Choose the position for the tablet</string>
     <string name="collected_data">Save collected data to file</string>
     <string name="save">Save</string>
