@@ -1,5 +1,7 @@
 # FRC Scouting App
 
+This was the original app we used for our 2 Deep Space Competition regionals, we used the Future Scouting repo for our State Competition
+
 This is the Team 3883 Pit and Match Scouting android app
 
 This app was built for the Lenovo Tab 4 8, but can easily be modifed for other screen sizes. We plan to redo this app with a dyamically generated UI in the off season.
